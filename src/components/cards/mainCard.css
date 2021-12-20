@@ -1,0 +1,82 @@
+.mainCard{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+}
+
+.titleRow{
+    width: 100%;
+}
+
+.contentRow{
+    padding: 0px 3.5% 0px 3.5%;
+}
+
+.infoCol{
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-bottom: 0.8%;
+    height: 100%;
+}
+
+.mainHeader{
+    font-family: 'Zilla Slab', serif;
+    min-width: max-content;
+
+    margin-bottom: 2%;
+}
+
+.mainTitle{
+    font-size: 3vw;
+}
+
+.mainSubtitle{
+    font-size: 1.5vw;
+    
+    border-bottom: double;
+    border-color: #d9d6ebab;
+    border-width: 3px;
+
+    padding-bottom: 1%;
+    margin: -10px 3% 0px 3%;
+}
+
+.infoData{
+    text-align: left;
+    font-size: 1vw;
+    
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.profileImgCol{
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    height: 100%;
+}
+
+.imgPerfil{
+    width: 15vw;
+    margin-right: 2%;
+
+    border-style: double;
+    border-color: #d9d6eb;
+    border-width: 3px;    
+}
+
+.timelineCol{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.timeline{
+    width: 26vw;
+}

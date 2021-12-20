@@ -1,0 +1,49 @@
+/*.mainDiv{
+    width: 94%;
+    height: 96%;
+    font-family: 'Zilla Slab', serif;
+    margin: 0 auto;
+
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}*/
+
+.goalsCard{
+    position: relative;
+}
+
+.title{
+    font-size: 1.8vw;
+    padding-bottom: 1vh;
+    margin-bottom: 0.8%;
+
+    border-bottom: double;
+    border-width: 2px;
+}
+
+.text{
+    font-size: 0.95vw;
+    text-align: justify;
+    margin-left: 2vh;
+    margin-right: 2vh;
+}
+
+.subtitle{
+    font-size: 1.1vw;
+    min-width: max-content;
+}
+
+.goalsCardContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin: 0 auto 0 auto;
+}
+
+.goalsParentCol{
+    margin-left: 2vw;
+    margin-right: 2vw;
+}

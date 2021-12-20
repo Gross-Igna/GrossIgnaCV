@@ -1,0 +1,76 @@
+.buttonContainer{
+    border-width: 1px;
+    width: 75.5vw;
+    height: 9vh;
+
+    overflow: visible;    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+
+    position: relative;
+    
+    margin-left: 12vw;
+    margin-right: 12vw;
+}
+
+.headerButton{
+    border-style: solid;
+    border-color: #d9d6eba8;
+    border-width: 1px;
+    border-bottom: none;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    padding-top: 0.15%;
+    
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 6vh;
+    padding: 0.3vw 4vw 0.1vw 4vw;
+    margin-right: 6px;
+}
+
+.mainButton{
+    /*padding-top: 0.1vw;*/
+    min-width: max-content;
+}
+
+.contactButton{
+    margin-right: 0px;
+}
+
+.nameText{
+    color: #d9d6eb;  
+    font-family: 'Satisfy', cursive;
+    font-size: 1.2vw;
+    margin-left: 12px;
+    margin-top: 1vh;
+}
+
+.buttonText{
+    color: #d9d6eb;
+    font-family: 'Zilla Slab', serif;
+    font-size: 1vw;
+    padding-top: 3px;
+}
+
+.profileImage{
+    height: 28px;
+}
+
+.icon{
+    position: relative;
+    top: 3.5px;
+    margin-right: 5px;
+    color: #d9d6eb;
+    font-size: 1rem;
+}

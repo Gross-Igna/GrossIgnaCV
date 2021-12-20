@@ -1,0 +1,26 @@
+base
+#140029
+
+#190033
+#1A0036
+#390075
+#5800B5
+
+letras
+#E8FFFF
+
+cards
+front #1a0036
+back  #140029
+
+font 
+fff9fb snow white
+d9d6eb ghost white
+white 
+FFFFFC baby powder
+d9d6eb own
+
+040317
+
+border color card
+oscuro 17002f
