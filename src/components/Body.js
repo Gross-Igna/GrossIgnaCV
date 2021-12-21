@@ -1,6 +1,6 @@
 import {React, Fragment, useState, useEffect} from 'react'
 import './body.css';
-import {useSpring, animated} from 'react-spring';
+import {useSpring} from 'react-spring';
 import MainCard from './cards/MainCard';
 import GoalsCard from './cards/GoalsCard';
 import PortfolioCard from './cards/PortfolioCard';
@@ -69,6 +69,7 @@ const bringCard = useSpring({
     const cardEffects = [setMainCardStyle, setGoalsCardStyle, setPortfolioCardStyle,
     setSkillsCardStyle, setEducationCardStyle, setContactCardStyle];
 
+    
     //Executes when nextCard is changed
     useEffect(() => {
         if(nextCard!==-1){

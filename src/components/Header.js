@@ -5,7 +5,7 @@ import {BsFillBriefcaseFill, BsTrophy,
     BsFillEnvelopeFill} from 'react-icons/bs'
 import {FaGraduationCap} from "react-icons/fa";
 import {GiSkills} from "react-icons/gi"
-import {Spring, useSpring, animated} from 'react-spring';
+import {useSpring, animated} from 'react-spring';
 
 export default function Header({setNextCard, currentCard, nextCard}) {
 
@@ -13,7 +13,6 @@ export default function Header({setNextCard, currentCard, nextCard}) {
     const frontCardColor = '#1a0036';
     const droppingCardColor = '#16002e';
 
-    const [mainBtnHover, isSelectedBtnHovering] = useState(false);
     const [headerEnabled, setHeaderEnable] = useState(true);
     //Button Styles States
     const [mainButtonStyle, setMainButtonStyle] = 
@@ -51,11 +50,15 @@ export default function Header({setNextCard, currentCard, nextCard}) {
         config:{mass: 1, tension: 240, friction: 10}}],
         from:{y: '0.5px', zIndex: 7, backgroundColor: frontCardColor}
     })
+    
+    //Setting new styles after animations
+    
 
-    //Executes when nextCard is changed
+    //Hook for set new styles
     useEffect(() => {
-        if(nextCard!==-1){
-            setHeaderEnable(false);
+        return function setNewStyles(){
+            if(nextCard!==-1){
+                setHeaderEnable(false);
             const currentButtonStyleEffect = buttonEffects[currentCard];
             const nextButtonStyleEffect = buttonEffects[nextCard];
             currentButtonStyleEffect(dropButton);
@@ -66,9 +69,10 @@ export default function Header({setNextCard, currentCard, nextCard}) {
                 currentButtonStyleEffect({zIndex: 3, marginBottom: '0px',
                 backgroundColor: backCardColor});
                 setHeaderEnable(true);
-            }, 1899)
+            }, 1899)            
+            }
         }
-    },[nextCard])
+    },[nextCard, bringButton, buttonEffects, currentCard, dropButton])
 
     return (
         <div className="buttonContainer">

@@ -1,12 +1,10 @@
 import React, {useState} from 'react'
 import {useSpring, animated} from 'react-spring';
-import {Button} from 'react-bootstrap';
-import {GiWideArrowDunk} from 'react-icons/gi';
 
 export default function NewLandingCvCard() {
 
     //CARD FLIP ANIMATION
-    const [flipped, set] = useState(false);
+    const [flipped] = useState(false);
     const { transform, opacity } = useSpring({
     opacity: flipped ? 1 : 0,
     transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,

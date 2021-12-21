@@ -2,7 +2,7 @@ import './App.css';
 import {React, useState, Fragment} from 'react';
 import Header from './components/Header';
 import Body from './components/Body'
-import {useSpring, animated} from 'react-spring';
+import {animated} from 'react-spring';
 
 function App() {
 

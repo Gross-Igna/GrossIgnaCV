@@ -1,7 +1,7 @@
 import React from 'react';
 import '../body.css';
 import './goalsCard.css';
-import {useSpring, animated} from 'react-spring';
+import {animated} from 'react-spring';
 import {GiArcheryTarget} from "react-icons/gi";
 
 export default function GoalsCard({goalsCardStyle}) {

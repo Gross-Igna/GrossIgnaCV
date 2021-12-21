@@ -3,7 +3,7 @@ import '../body.css';
 import './mainCard.css';
 import perfil2 from '../../img/perfil2.png'
 import timeline from '../../img/timeline.png'
-import {useSpring, animated} from 'react-spring';
+import {animated} from 'react-spring';
 
 export default function MainCard({mainCardStyle}) {
     return (
