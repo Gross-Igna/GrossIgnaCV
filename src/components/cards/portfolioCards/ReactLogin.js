@@ -53,7 +53,7 @@ export default function ReactLogin() {
                                         <br></br>Utiliza JWT para garantizar acceso exclusivo a ciertas vistas a los clientes logeados.
                                     </div>
                                     <div className='pCardLinkDiv pCardDiv'>
-                                        <a href="url">Ir al sitio web</a> <a href="url">Ver video</a>
+                                        <p><a href="url">Probar sitio web</a> | <a href="url">Ver video</a></p>
                                     </div>
                                 </div>
                             </div>

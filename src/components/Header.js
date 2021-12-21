@@ -1,4 +1,4 @@
-import {React, useState, useEffect} from 'react';
+import {React, useState, useEffect, useRef} from 'react';
 import './header.css';
 import img_perfil1 from '../img/perfil1.png'
 import {BsFillBriefcaseFill, BsTrophy, 
@@ -50,29 +50,30 @@ export default function Header({setNextCard, currentCard, nextCard}) {
         config:{mass: 1, tension: 240, friction: 10}}],
         from:{y: '0.5px', zIndex: 7, backgroundColor: frontCardColor}
     })
-    
-    //Setting new styles after animations
-    
 
-    //Hook for set new styles
+    //Useref to prevent hint in next useEffect Hook
+    const hasFetchedData = useRef(false);
+    
+    //Executes when nextCard is changed, set new style for header components
     useEffect(() => {
-        return function setNewStyles(){
+        if (!hasFetchedData.current) {
             if(nextCard!==-1){
                 setHeaderEnable(false);
-            const currentButtonStyleEffect = buttonEffects[currentCard];
-            const nextButtonStyleEffect = buttonEffects[nextCard];
-            currentButtonStyleEffect(dropButton);
-            nextButtonStyleEffect(bringButton);
-            setTimeout(()=>{
-                nextButtonStyleEffect({zIndex: 7, marginBottom: '13px',
-                backgroundColor: frontCardColor});
-                currentButtonStyleEffect({zIndex: 3, marginBottom: '0px',
-                backgroundColor: backCardColor});
-                setHeaderEnable(true);
-            }, 1899)            
+                const currentButtonStyleEffect = buttonEffects[currentCard];
+                const nextButtonStyleEffect = buttonEffects[nextCard];
+                currentButtonStyleEffect(dropButton);
+                nextButtonStyleEffect(bringButton);
+                setTimeout(()=>{
+                    nextButtonStyleEffect({zIndex: 7, marginBottom: '13px',
+                    backgroundColor: frontCardColor});
+                    currentButtonStyleEffect({zIndex: 3, marginBottom: '0px',
+                    backgroundColor: backCardColor});
+                    setHeaderEnable(true);
+                }, 1899)
+                hasFetchedData.current = true;
             }
         }
-    },[nextCard, bringButton, buttonEffects, currentCard, dropButton])
+    },[nextCard, currentCard, bringButton, dropButton, buttonEffects])
 
     return (
         <div className="buttonContainer">
