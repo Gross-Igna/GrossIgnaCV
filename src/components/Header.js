@@ -1,4 +1,4 @@
-import {React, useState, useEffect, useRef, useCallback} from 'react';
+import {React, useState, useEffect} from 'react';
 import './header.css';
 import img_perfil1 from '../img/perfil1.png'
 import {BsFillBriefcaseFill, BsTrophy, 
@@ -7,7 +7,8 @@ import {FaGraduationCap} from "react-icons/fa";
 import {GiSkills} from "react-icons/gi"
 import {useSpring, animated} from 'react-spring';
 
-export default function Header({setNextCard, currentCard, nextCard}) {
+export default function Header({setNextCard, currentCard, nextCard, 
+    headerStylesUpdated, bodyStylesUpdated}) {
 
     const backCardColor = '#140029';
     const frontCardColor = '#1a0036';
@@ -103,33 +104,73 @@ export default function Header({setNextCard, currentCard, nextCard}) {
     },[nextCard, updateStyles])*/
 
     //SOLUCION 3
+    //const headerStylesUpdated = useRef(false);
+
     useEffect(() => {
         if(nextCard!==-1){
-            setHeaderEnable(false);
+            if(headerStylesUpdated.current === false){
+                setHeaderEnable(false);
+                headerStylesUpdated.current = true;
 
-            const buttonEffects = [setMainButtonStyle, setGoalsButtonStyle, setPortfolioButtonStyle,
-                setSkillsButtonStyle, setEducationButtonStyle, setContactButtonStyle];
-            const currentButtonStyleEffect = buttonEffects[currentCard];
-            const nextButtonStyleEffect = buttonEffects[nextCard];
-            
-            currentButtonStyleEffect(dropButton);
-            nextButtonStyleEffect(bringButton);
-            setTimeout(()=>{
-                nextButtonStyleEffect({zIndex: 7, marginBottom: '13px',
-                backgroundColor: frontCardColor});
-                currentButtonStyleEffect({zIndex: 3, marginBottom: '0px',
-                backgroundColor: backCardColor});
-                setHeaderEnable(true);
-            }, 1899)
+                const buttonEffects = [setMainButtonStyle, setGoalsButtonStyle, setPortfolioButtonStyle,
+                    setSkillsButtonStyle, setEducationButtonStyle, setContactButtonStyle];
+                const currentButtonStyleEffect = buttonEffects[currentCard.current];
+                const nextButtonStyleEffect = buttonEffects[nextCard];
+                
+                currentButtonStyleEffect(dropButton);
+                nextButtonStyleEffect(bringButton);
+                setTimeout(()=>{
+                    nextButtonStyleEffect({zIndex: 7, marginBottom: '13px',
+                    backgroundColor: frontCardColor});
+                    currentButtonStyleEffect({zIndex: 3, marginBottom: '0px',
+                    backgroundColor: backCardColor});
+                    setHeaderEnable(true);
+                }, 1899)
+            }
         }
-    },[nextCard, currentCard, bringButton, dropButton])
+    },[nextCard, currentCard, bringButton, dropButton, headerStylesUpdated])
+
+    function setNewCard(n){
+        if (n === 0){
+            if (nextCard !== -1){
+                setNextCard(0);
+                headerStylesUpdated.current = false;
+                bodyStylesUpdated.current = false;
+            }
+        }
+        else if (n === 1){
+            setNextCard(1);
+            headerStylesUpdated.current = false;
+            bodyStylesUpdated.current = false;
+        }
+        else if (n === 2){
+            setNextCard(2);
+            headerStylesUpdated.current = false;
+            bodyStylesUpdated.current = false;
+        }
+        else if (n === 3){
+            setNextCard(3);
+            headerStylesUpdated.current = false;
+            bodyStylesUpdated.current = false;
+        }
+        else if (n === 4){
+            setNextCard(4);
+            headerStylesUpdated.current = false;
+            bodyStylesUpdated.current = false;
+        }
+        else if (n === 5){
+            setNextCard(5);
+            headerStylesUpdated.current = false;
+            bodyStylesUpdated.current = false;
+        }
+    }
 
     return (
         <div className="buttonContainer">
             
             <animated.button 
             className="headerButton mainButton" 
-            onClick={()=>headerEnabled?setNextCard(0):null} 
+            onClick={()=>headerEnabled?setNewCard(0):null} 
             style={mainButtonStyle}>
                 <img src={img_perfil1} alt="Profile" className="profileImage"/>
                 <h5 className="nameText">Ignacio Cruz Gross</h5>
@@ -137,7 +178,7 @@ export default function Header({setNextCard, currentCard, nextCard}) {
 
             <animated.button 
             className="headerButton"
-            onClick={()=>headerEnabled?setNextCard(1):null}
+            onClick={()=>headerEnabled?setNewCard(1):null}
             style={goalsButtonStyle}>
                 <p className="icon"><BsTrophy/></p>
                 <h5 className="buttonText">Objetivos</h5>
@@ -146,7 +187,7 @@ export default function Header({setNextCard, currentCard, nextCard}) {
             <animated.button 
             className="headerButton"
             style={portfolioButtonStyle}
-            onClick={()=>headerEnabled?setNextCard(2):null}>
+            onClick={()=>headerEnabled?setNewCard(2):null}>
                 <p className="icon"><BsFillBriefcaseFill/></p>
                 <h5 className="buttonText">Portfolio</h5>
             </animated.button>
@@ -154,7 +195,7 @@ export default function Header({setNextCard, currentCard, nextCard}) {
             <animated.button 
             className="headerButton"
             style={skillsButtonStyle}
-            onClick={()=>headerEnabled?setNextCard(3):null}>
+            onClick={()=>headerEnabled?setNewCard(3):null}>
                 <p className="icon"><GiSkills/></p>
                 <h5 className="buttonText">Habilidades</h5>
             </animated.button>
@@ -162,7 +203,7 @@ export default function Header({setNextCard, currentCard, nextCard}) {
             <animated.button 
             className="headerButton"
             style={educationButtonStyle}
-            onClick={()=>headerEnabled?setNextCard(4):null}>
+            onClick={()=>headerEnabled?setNewCard(4):null}>
                 <p className="icon"><FaGraduationCap/></p>
                 <h5 className="buttonText">Educacion</h5>
             </animated.button>
@@ -170,7 +211,7 @@ export default function Header({setNextCard, currentCard, nextCard}) {
             <animated.button 
             className="headerButton contactButton"
             style={contactButtonStyle}
-            onClick={()=>headerEnabled?setNextCard(5):null}>
+            onClick={()=>headerEnabled?setNewCard(5):null}>
                 <p className="icon"><BsFillEnvelopeFill/></p>
                 <h5 className="buttonText">Contactarse</h5>
             </animated.button>

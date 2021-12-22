@@ -8,7 +8,7 @@ import SkillsCard from './cards/SkillsCard';
 import EducationCard from './cards/EducationCard';
 import ContactCard from './cards/ContactCard';
 
-export default function Body({currentCard, nextCard, setCurrentCard}) {
+export default function Body({currentCard, nextCard, bodyStylesUpdated}) {
 
     const backCardColor = '#140029';
     const frontCardColor = '#1a0036';
@@ -66,26 +66,31 @@ const bringCard = useSpring({
     useState({zIndex: 3, position:'absolute', top:'120%', backgroundColor:backCardColor});
     const [contactCardStyle, setContactCardStyle] = 
     useState({zIndex: 3, position:'absolute', top:'120%', backgroundColor:backCardColor});
-    const cardEffects = [setMainCardStyle, setGoalsCardStyle, setPortfolioCardStyle,
-    setSkillsCardStyle, setEducationCardStyle, setContactCardStyle];
 
     
     //Executes when nextCard is changed
     useEffect(() => {
         if(nextCard!==-1){
-            const currentCardStyleEffect = cardEffects[currentCard];
-            const nextCardStyleEffect = cardEffects[nextCard];
-            nextCardStyleEffect(bringCard);
-            currentCardStyleEffect(dropCard);
-            setTimeout(()=>{
-                nextCardStyleEffect({zIndex:4, backgroundColor: frontCardColor, top:'0%',
-                position:'relative', boxShadow: '15px -5px 20px 5px #06011a'});
-                currentCardStyleEffect({zIndex:3, backgroundColor: backCardColor,
-                position: 'absolute', top:'120%'});
-                setCurrentCard(nextCard);
-            }, 1900)
+            if(bodyStylesUpdated.current === false){
+                bodyStylesUpdated.current = true;
+
+                const cardEffects = [setMainCardStyle, setGoalsCardStyle, setPortfolioCardStyle,
+                    setSkillsCardStyle, setEducationCardStyle, setContactCardStyle];
+                const currentCardStyleEffect = cardEffects[currentCard.current];
+                const nextCardStyleEffect = cardEffects[nextCard];
+
+                nextCardStyleEffect(bringCard);
+                currentCardStyleEffect(dropCard);
+                setTimeout(()=>{
+                    nextCardStyleEffect({zIndex:4, backgroundColor: frontCardColor, top:'0%',
+                    position:'relative', boxShadow: '15px -5px 20px 5px #06011a'});
+                    currentCardStyleEffect({zIndex:3, backgroundColor: backCardColor,
+                    position: 'absolute', top:'120%'});
+                    currentCard.current = nextCard;
+                }, 1900)
+            }
         }
-    },[nextCard])
+    },[nextCard, currentCard, bringCard, dropCard, bodyStylesUpdated])
 
     return (
         <Fragment>

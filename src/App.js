@@ -7,13 +7,16 @@ import {animated} from 'react-spring';
 function App() {
 
   const [nextCard, setNextCard] = useState(-1);
-  const [currentCard, setCurrentCard] = useState(0);
+  const currentCard = useRef(0);
+  const headerStylesUpdated = useRef(true);
+  const bodyStylesUpdated = useRef(true);
 
   return (
     <Fragment>
       <animated.div className='appDiv'>
-          <Header setNextCard={setNextCard} nextCard={nextCard} currentCard={currentCard}/>
-          <Body nextCard={nextCard} currentCard={currentCard} setCurrentCard={setCurrentCard}/>
+          <Header setNextCard={setNextCard} nextCard={nextCard} currentCard={currentCard} 
+          headerStylesUpdated={headerStylesUpdated} bodyStylesUpdated={bodyStylesUpdated}/>
+          <Body nextCard={nextCard} currentCard={currentCard} bodyStylesUpdated={bodyStylesUpdated}/>
           {/*<div style={{color:'red'}}>header</div>
           <div style={{color:'red'}}>body</div>*/}
       </animated.div>
