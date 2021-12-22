@@ -1,4 +1,4 @@
-import {React, useState, useEffect, useRef} from 'react';
+import {React, useState, useEffect, useRef, useCallback} from 'react';
 import './header.css';
 import img_perfil1 from '../img/perfil1.png'
 import {BsFillBriefcaseFill, BsTrophy, 
@@ -27,9 +27,7 @@ export default function Header({setNextCard, currentCard, nextCard}) {
     useState({zIndex:'2', backgroundColor: backCardColor});
     const [contactButtonStyle, setContactButtonStyle] = 
     useState({zIndex:'2', backgroundColor: backCardColor});
-    const buttonEffects = [setMainButtonStyle, setGoalsButtonStyle, setPortfolioButtonStyle,
-    setSkillsButtonStyle, setEducationButtonStyle, setContactButtonStyle];
-
+    
     const dropButton = useSpring({
         to:[
         {x: '0%', y: '0%', backgroundColor: frontCardColor, zIndex: '8',
@@ -51,11 +49,13 @@ export default function Header({setNextCard, currentCard, nextCard}) {
         from:{y: '0.5px', zIndex: 7, backgroundColor: frontCardColor}
     })
 
+
+    //SOLUCION 1//
     //Useref to prevent hint in next useEffect Hook
-    const hasFetchedData = useRef(false);
+    //const hasFetchedData = useRef(false);
     
     //Executes when nextCard is changed, set new style for header components
-    useEffect(() => {
+    /*useEffect(() => {
         if (!hasFetchedData.current) {
             if(nextCard!==-1){
                 setHeaderEnable(false);
@@ -73,7 +73,56 @@ export default function Header({setNextCard, currentCard, nextCard}) {
                 hasFetchedData.current = true;
             }
         }
-    },[nextCard, currentCard, bringButton, dropButton, buttonEffects])
+    },[nextCard, currentCard, bringButton, dropButton, buttonEffects])*/
+
+
+    //SOLUCION 2
+    /*
+    const updateStyles = useCallback(
+        () => {
+            setHeaderEnable(false);
+            const currentButtonStyleEffect = buttonEffects[currentCard];
+            const nextButtonStyleEffect = buttonEffects[nextCard];
+            currentButtonStyleEffect(dropButton);
+            nextButtonStyleEffect(bringButton);
+            setTimeout(()=>{
+            nextButtonStyleEffect({zIndex: 7, marginBottom: '13px',
+            backgroundColor: frontCardColor});
+            currentButtonStyleEffect({zIndex: 3, marginBottom: '0px',
+            backgroundColor: backCardColor});
+            setHeaderEnable(true);
+            }, 1899)
+        },
+        [bringButton, buttonEffects, currentCard, dropButton, nextCard],
+    )
+
+    useEffect(() => {
+        if(nextCard!==-1){
+            updateStyles();
+        }
+    },[nextCard, updateStyles])*/
+
+    //SOLUCION 3
+    useEffect(() => {
+        if(nextCard!==-1){
+            setHeaderEnable(false);
+
+            const buttonEffects = [setMainButtonStyle, setGoalsButtonStyle, setPortfolioButtonStyle,
+                setSkillsButtonStyle, setEducationButtonStyle, setContactButtonStyle];
+            const currentButtonStyleEffect = buttonEffects[currentCard];
+            const nextButtonStyleEffect = buttonEffects[nextCard];
+            
+            currentButtonStyleEffect(dropButton);
+            nextButtonStyleEffect(bringButton);
+            setTimeout(()=>{
+                nextButtonStyleEffect({zIndex: 7, marginBottom: '13px',
+                backgroundColor: frontCardColor});
+                currentButtonStyleEffect({zIndex: 3, marginBottom: '0px',
+                backgroundColor: backCardColor});
+                setHeaderEnable(true);
+            }, 1899)
+        }
+    },[nextCard, currentCard, bringButton, dropButton])
 
     return (
         <div className="buttonContainer">

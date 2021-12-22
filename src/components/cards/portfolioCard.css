@@ -159,3 +159,15 @@ iframe{
     flex-direction: column;
     justify-content: center;
 }
+
+.linkBtn{
+    background-color: transparent;
+    border-color: transparent;
+
+    color: #5d5dec;
+    text-decoration: underline;
+    text-decoration-style: solid;
+
+    cursor: pointer;
+    margin-top: 15px;
+}

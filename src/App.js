@@ -1,5 +1,5 @@
 import './App.css';
-import {React, useState, Fragment} from 'react';
+import {React, useState, useRef, Fragment} from 'react';
 import Header from './components/Header';
 import Body from './components/Body'
 import {animated} from 'react-spring';

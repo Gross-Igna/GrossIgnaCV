@@ -20,8 +20,8 @@ export default function ReactLogin() {
 
     return (
         <div>
-            <div className='cardParentDiv'>
-                
+
+            <div className='cardParentDiv'>    
                 <div>
                     <animated.div
                         className="c back"
@@ -53,7 +53,8 @@ export default function ReactLogin() {
                                         <br></br>Utiliza JWT para garantizar acceso exclusivo a ciertas vistas a los clientes logeados.
                                     </div>
                                     <div className='pCardLinkDiv pCardDiv'>
-                                        <p><a href="url">Probar sitio web</a> | <a href="url">Ver video</a></p>
+                                            <span>Probar sitio web</span> |&nbsp;
+                                            <btn className='linkBtn' onClick={!flipped ? () => set(state => !state) : undefined}>Ver video</btn>
                                     </div>
                                 </div>
                             </div>
@@ -86,8 +87,8 @@ export default function ReactLogin() {
 
                     </animated.div>
                 </div>
-
             </div>
+            
         </div>
     )
 }
