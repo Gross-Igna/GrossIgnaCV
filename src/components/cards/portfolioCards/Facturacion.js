@@ -44,10 +44,8 @@ export default function Facturacion() {
                                         que los cobradores de la institución reparten a los beneficiaros de la escuela.
                                     </div>
                                     <div className='pCardLinkDiv pCardDiv'>
-                                        <p>
                                             <span>Probar App</span> |&nbsp;
                                             <btn className='linkBtn' onClick={!flipped ? () => set(state => !state) : undefined}>Ver video</btn>
-                                        </p>
                                     </div>
                                 </div>
                             </div>

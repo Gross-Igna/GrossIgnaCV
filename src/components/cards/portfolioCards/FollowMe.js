@@ -6,7 +6,7 @@ import icon_spring from '../../../img/icon_spring.png';
 import {GiReturnArrow} from 'react-icons/gi';
 import {AiOutlineYoutube} from 'react-icons/ai';
 
-export default function NewLandingCvCard() {
+export default function FollowMe() {
 
     //CARD FLIP ANIMATION
     const [flipped, set] = useState(false);
@@ -50,10 +50,8 @@ export default function NewLandingCvCard() {
                                         <br></br>Usa la librería de Google Maps y su API para que podamos realizar este seguimiento.
                                     </div>
                                     <div className='pCardLinkDiv pCardDiv'>
-                                        <p>
                                             <span>Probar App</span> |&nbsp;
                                             <btn className='linkBtn' onClick={!flipped ? () => set(state => !state) : undefined}>Ver video</btn>
-                                        </p>
                                     </div>
                                 </div>
                             </div>

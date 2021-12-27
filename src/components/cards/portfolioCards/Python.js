@@ -1,7 +1,7 @@
 import React from 'react'
 import python_icon from '../../../img/icon_python.png';
 
-export default function NewLandingCvCard() {
+export default function Python(){
 
     return (
         <div>
@@ -25,10 +25,8 @@ export default function NewLandingCvCard() {
                                     <br></br>Implementación de <b>algoritmos de carga y ordenamiento, cálculo de estadísticas, implementación de matrices y almacenamiento permanente de datos, entre otros.</b>.
                                 </div>
                                 <div className='pCardLinkDiv pCardDiv'>
-                                    <p>
                                         <span>Copiar link</span> |&nbsp;
                                         <span>Contactarse</span>
-                                    </p>
                                 </div>
                             </div>
                         </div>

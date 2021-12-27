@@ -31,10 +31,8 @@ export default function NewLandingCvCard() {
                                     de animaciones.
                                 </div>
                                 <div className='pCardLinkDiv pCardDiv'>
-                                    <p>
                                         <span>Copiar link</span> |&nbsp;
                                         <span>Contactarse</span>
-                                    </p>
                                 </div>
                             </div>
                         </div>

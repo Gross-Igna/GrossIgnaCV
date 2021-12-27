@@ -138,11 +138,11 @@ iframe{
 }
 
 .pCardTitle{
-    font-size: 2.5em;
+    font-size: 2.4vw !important;
 }
 
 .pCardIcon{
-    margin: 0px 2px 0px 2px;
+    margin: -0.4vw 2px 0.12vw 2px;
     width: 5%; 
 }
 
@@ -152,6 +152,7 @@ iframe{
 
 .pCardDiv{
     margin: 5px 0px 5px 0px;
+    font-size: 0.9vw;
 }
 
 .projectInfoDiv{
