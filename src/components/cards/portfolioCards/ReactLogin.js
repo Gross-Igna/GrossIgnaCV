@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 import {useSpring, animated} from 'react-spring';
-import './reactLogin.css';
 import icon_react from '../../../img/icon_react.png'
 import icon_mysql from '../../../img/icon_mysql.png'
 import icon_spring from '../../../img/icon_spring.png'
