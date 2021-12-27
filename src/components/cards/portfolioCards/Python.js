@@ -1,34 +1,39 @@
-import React, {useState} from 'react'
-import {useSpring, animated} from 'react-spring';
+import React from 'react'
+import python_icon from '../../../img/icon_python.png';
 
 export default function NewLandingCvCard() {
-
-    //CARD FLIP ANIMATION
-    const [flipped, set] = useState(false);
-    const { transform, opacity } = useSpring({
-    opacity: flipped ? 1 : 0,
-    transform: `perspective(600px) rotateX(${flipped ? 180 : 0}deg)`,
-    config: { mass: 5, tension: 500, friction: 80 },
-    })
 
     return (
         <div>
             <div className='cardParentDiv'>
-                <div onClick={() => set(state => !state)}>
-                
-                <animated.div
+            <div
                     className="c back"
-                    style={{ opacity: opacity.to(o => 1 - o), transform }}
-                >
-                    <p>sadness</p>
-                </animated.div>
+                    style={{ opacity: 1, zIndex: 11 }}
+                >   
 
-                <animated.div
-                    className="c front"
-                    style={{ opacity, transform, rotateX: '180deg',}}
-                >
-                    <p>sadness</p>
-                </animated.div>
+                    <div classname='pBackCardContent' style={{height: '100%'}}>
+                        <div classname='flipBtnDiv' style={{height: '100%'}}>
+                            <div className='disablerDiv projectInfoDiv'>
+                                <h1 className='pCardTitle pCardDiv'>Prácticas UTN</h1>
+                                <div className='pCardIconsDiv pCardDiv'>
+                                    <img src={python_icon} alt="python icon" 
+                                    className='pCardIcon'/>
+                                </div>
+                                <div className='pCardTextDiv pCardDiv'>
+                                    Estudio práctico de lenguaje <b>Python</b> aplicado a algoritmos y estructuras de datos realizado en la Universidad Tecnológica
+                                    de Córdoba.
+                                    <br></br>Implementación de <b>algoritmos de carga y ordenamiento, cálculo de estadísticas, implementación de matrices y almacenamiento permanente de datos, entre otros.</b>.
+                                </div>
+                                <div className='pCardLinkDiv pCardDiv'>
+                                    <p>
+                                        <span>Copiar link</span> |&nbsp;
+                                        <span>Contactarse</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
 
             </div>

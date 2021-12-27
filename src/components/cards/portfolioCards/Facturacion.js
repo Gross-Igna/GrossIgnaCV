@@ -37,10 +37,11 @@ export default function Facturacion() {
                                         className='pCardIcon'/>
                                     </div>
                                     <div className='pCardTextDiv pCardDiv'>
-                                        Aplicación de liquidación de cuotas desarrollada para la 
-                                        , incorpora una base de datos <b>MySQL</b>.
-                                        <br></br>Permite al creador de la sala seleccionar una locación de destino y notifica a los participantes en caso de que se esté alejando de esta.
-                                        <br></br>Usa la librería de Google Maps y su API para que podamos realizar este seguimiento.
+                                        Software desarrollado para la administración de la Escuela Especial Nro 1281 - Candi (Sunchales,
+                                        Santa Fe). Programado enteramente en <b>Java</b>.
+                                        <br></br>Aloja una base de datos de los socios que aportan beneficios a la institución.
+                                        <br></br>Permite generar e imprimir los comprobantes de liquidación de cuotas
+                                        que los cobradores de la institución reparten a los beneficiaros de la escuela.
                                     </div>
                                     <div className='pCardLinkDiv pCardDiv'>
                                         <p>
@@ -68,7 +69,7 @@ export default function Facturacion() {
                                     <GiReturnArrow className='flipIcon'/>
                                 </button>
                                 <div className='disablerDiv'>
-                                    <iframe src="https://www.youtube.com/embed/W2mEkKs2TcrU" 
+                                    <iframe src="https://www.youtube.com/embed/cbrEyeN1wP8" 
                                     title="YouTube video player" frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                                     gyroscope; picture-in-picture" style={!flipped ? {display: 'none'} : undefined}
