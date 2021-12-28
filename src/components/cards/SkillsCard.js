@@ -57,9 +57,9 @@ export default function SkillsCard({skillsCardStyle}){
                     </div>
                     <div className='softSkillsFlexbox'>
                         <div className='softSkillsItem'>
-                            <b>▪Capacidad de resolución de problemas:</b><br></br>
-                            Capacidad de abordar con paciencia y decisión. Cada vez que se presenta una complicación, exploro posibles alternativas para poder organizar y 
-                            elaborar un plan de trabajo para conducir hacia las soluciones.
+                            <b>▪Resolución de problemas:</b><br></br>
+                            Capacidad de abordar con paciencia y decisión. Cada vez que se presenta una complicación, exploro posibles alternativas para poder 
+                            elaborar un plan de trabajo que conduzca hacia las soluciones.
                             <br></br>
                         </div>
                         <div className='softSkillsItem'>
@@ -70,8 +70,8 @@ export default function SkillsCard({skillsCardStyle}){
                         </div>
                         <div className='softSkillsItem'>
                             <b>▪Antes de ser comprendido, comprendo:</b><br></br>
-                            Activa escucha a lo que expresa el otro, indiferentemente de si en lo personal estoy de acuerdo o no en primera instancia. 
-                            Me facilita para trabajar junto a mi equipo.
+                            Activa escucha a lo que expresa el otro, indiferentemente de si estoy de acuerdo o no en primera instancia. 
+                            Considero esto fundamental para poder trabajar junto a un equipo.
                             <br></br>
                         </div>
                         <div className='softSkillsItem'>
