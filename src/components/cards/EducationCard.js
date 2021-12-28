@@ -1,6 +1,6 @@
 import React from 'react';
 import '../body.css';
-import '../educationCard.css';
+import './educationCard.css';
 import logo_utn from '../../img/logo_utn.png';
 import logo_campbridge from '../../img/logo_campbridge.png';
 import logo_google_activate from '../../img/logo_google_activate.png';
@@ -23,7 +23,7 @@ export default function EducationCard({educationCardStyle}){
                         </div>
                         <div className='educationItemLink'>
                             <a href='https://www.institucional.frc.utn.edu.ar/internacionales/frc/de_grado/sistemas.asp'
-                            target="_blank">Más información</a>
+                            target="_blank" rel="noreferrer">Más información</a>
                         </div>
                     </div>
 
@@ -37,7 +37,7 @@ export default function EducationCard({educationCardStyle}){
                         </div>
                         <div className='educationItemLink'>
                             <a href='https://www.cambridgeenglish.org/es/exams-and-tests/first/'
-                            target="_blank">Más información</a>
+                            target="_blank" rel="noreferrer">Más información</a>
                         </div>
                     </div>
 
@@ -52,7 +52,7 @@ export default function EducationCard({educationCardStyle}){
                         </div>
                         <div className='educationItemLink'>
                             <a href='https://learndigital.withgoogle.com/activate/course/web-development-II'
-                            target="_blank">Más información</a>
+                            target="_blank" rel="noreferrer">Más información</a>
                         </div>
                     </div>
 
@@ -68,10 +68,10 @@ export default function EducationCard({educationCardStyle}){
                             </div>
                             <div className='educationItemLink'>
                             <a href='http://www.sanjosesunchales.com.ar/'
-                            target="_blank">Más información</a>
+                            target="_blank" rel="noreferrer">Más información</a>
                             </div>
                     </div>
-
+                    <br></br>
                 </div>
             </div>
         </animated.div>
