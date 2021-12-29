@@ -2,6 +2,7 @@ import './App.css';
 import {React, useState, useRef, Fragment} from 'react';
 import Header from './components/Header';
 import Body from './components/Body'
+import MobileAlert from './components/MobileAlert'
 import {animated} from 'react-spring';
 
 function App() {
@@ -14,11 +15,10 @@ function App() {
   return (
     <Fragment>
       <animated.div className='appDiv'>
+          <MobileAlert/>
           <Header setNextCard={setNextCard} nextCard={nextCard} currentCard={currentCard} 
           headerStylesUpdated={headerStylesUpdated} bodyStylesUpdated={bodyStylesUpdated}/>
           <Body nextCard={nextCard} currentCard={currentCard} bodyStylesUpdated={bodyStylesUpdated}/>
-          {/*<div style={{color:'red'}}>header</div>
-          <div style={{color:'red'}}>body</div>*/}
       </animated.div>
     </Fragment>
   );
