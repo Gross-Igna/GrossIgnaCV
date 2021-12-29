@@ -18,14 +18,31 @@
 }
 
 .alertTitle{
-    font-size: 2.5vw;
+    font-size: 300%;
 }
 
 .alertImage{
     width: 15vw;
-    margin: 1vw;
+    margin-top: 1vw;
+    margin-bottom: 4vw;
 }
 
 .alertText{
-    font-size: 1vw;
+    font-size: 80%;
+
+    margin: 0 20%;
+}
+
+.alertBtn{
+    position: relative;
+    top: 3vw;
+
+    padding: 1.5vw;
+
+    color: #1e023df5;
+    background-color: #e0d4eef5;
+
+    border-color: #120125f5;
+    border-style: solid;
+    border-radius: 10px;
 }
