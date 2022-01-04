@@ -50,7 +50,9 @@ export default function FollowMe() {
                                         <br></br>Usa la librería de Google Maps y su API para que podamos realizar este seguimiento.
                                     </div>
                                     <div className='pCardLinkDiv pCardDiv'>
-                                            <span>Probar App</span> |&nbsp;
+                                            <btn className="linkBtn" 
+                                            onClick={() => window.open('https://drive.google.com/drive/folders/1CIyn4yJBWGU2yS4LBZK0RXSarRgpckSO?usp=sharing'
+                                            , '_blank')}>Probar App</btn> |&nbsp;
                                             <btn className='linkBtn' onClick={!flipped ? () => set(state => !state) : undefined}>Ver video</btn>
                                     </div>
                                 </div>

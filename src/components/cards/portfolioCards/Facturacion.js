@@ -14,6 +14,10 @@ export default function Facturacion() {
     config: { mass: 5, tension: 500, friction: 80 },
     })
 
+    function downloadLiquid(){
+        window.open('https://drive.google.com/u/0/uc?id=1VbPTgKDIhIYZn8lYrtP5T4tTvET2H5yr&export=download', '_blank')
+    }
+
     return (
         <div>
             <div className='cardParentDiv'>
@@ -44,7 +48,7 @@ export default function Facturacion() {
                                         que los cobradores de la institución reparten a los beneficiaros de la escuela.
                                     </div>
                                     <div className='pCardLinkDiv pCardDiv'>
-                                            <span>Probar App</span> |&nbsp;
+                                            <btn className='linkBtn' onClick={() => downloadLiquid()}>Descargar Software</btn> |&nbsp;
                                             <btn className='linkBtn' onClick={!flipped ? () => set(state => !state) : undefined}>Ver video</btn>
                                     </div>
                                 </div>

@@ -1,8 +1,13 @@
 import React from 'react'
 import react_icon from '../../../img/icon_react.png';
 import springR_icon from '../../../img/icon_springR.png';
+
 export default function NewLandingCvCard() {
 
+    function cvCopyLink(){
+        navigator.clipboard.writeText('https://ignaciogross.netlify.app/');
+        alert("Link de la página copiado a su portapapeles :)");
+    }
 
     return (
         <div>
@@ -31,8 +36,7 @@ export default function NewLandingCvCard() {
                                     de animaciones.
                                 </div>
                                 <div className='pCardLinkDiv pCardDiv'>
-                                        <span>Copiar link</span> |&nbsp;
-                                        <span>Contactarse</span>
+                                        <span className='linkBtn' onClick={() => cvCopyLink()}>Copiar link</span>
                                 </div>
                             </div>
                         </div>

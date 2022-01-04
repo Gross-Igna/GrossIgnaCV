@@ -25,8 +25,9 @@ export default function Python(){
                                     <br></br>Implementación de <b>algoritmos de carga y ordenamiento, cálculo de estadísticas, implementación de matrices y almacenamiento permanente de datos, entre otros.</b>.
                                 </div>
                                 <div className='pCardLinkDiv pCardDiv'>
-                                        <span>Copiar link</span> |&nbsp;
-                                        <span>Contactarse</span>
+                                <btn className="linkBtn" 
+                                    onClick={() => window.open('https://drive.google.com/drive/folders/1k3n0x1Rkud8UoVON_zSFFiTA30uRpn-u?usp=sharing'
+                                    , '_blank')}>Ver Proyectos</btn>
                                 </div>
                             </div>
                         </div>

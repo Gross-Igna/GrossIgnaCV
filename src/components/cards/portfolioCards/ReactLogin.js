@@ -52,7 +52,9 @@ export default function ReactLogin() {
                                         <br></br>Utiliza JWT para garantizar acceso exclusivo a ciertas vistas a los clientes logeados.
                                     </div>
                                     <div className='pCardLinkDiv pCardDiv'>
-                                            <span>Probar sitio web</span> |&nbsp;
+                                            <btn className='linkBtn'
+                                            onClick={() => window.open('https://prettiestloginpage.netlify.app/'
+                                            , '_blank')}>Probar ahora!</btn> |&nbsp;
                                             <btn className='linkBtn' onClick={!flipped ? () => set(state => !state) : undefined}>Ver video</btn>
                                     </div>
                                 </div>
