@@ -50,62 +50,6 @@ export default function Header({setNextCard, currentCard, nextCard,
         from:{y: '0.5px', zIndex: 7, backgroundColor: frontCardColor}
     })
 
-
-    //SOLUCION 1//
-    //Useref to prevent hint in next useEffect Hook
-    //const hasFetchedData = useRef(false);
-    
-    //Executes when nextCard is changed, set new style for header components
-    /*useEffect(() => {
-        if (!hasFetchedData.current) {
-            if(nextCard!==-1){
-                setHeaderEnable(false);
-                const currentButtonStyleEffect = buttonEffects[currentCard];
-                const nextButtonStyleEffect = buttonEffects[nextCard];
-                currentButtonStyleEffect(dropButton);
-                nextButtonStyleEffect(bringButton);
-                setTimeout(()=>{
-                    nextButtonStyleEffect({zIndex: 7, marginBottom: '13px',
-                    backgroundColor: frontCardColor});
-                    currentButtonStyleEffect({zIndex: 3, marginBottom: '0px',
-                    backgroundColor: backCardColor});
-                    setHeaderEnable(true);
-                }, 1899)
-                hasFetchedData.current = true;
-            }
-        }
-    },[nextCard, currentCard, bringButton, dropButton, buttonEffects])*/
-
-
-    //SOLUCION 2
-    /*
-    const updateStyles = useCallback(
-        () => {
-            setHeaderEnable(false);
-            const currentButtonStyleEffect = buttonEffects[currentCard];
-            const nextButtonStyleEffect = buttonEffects[nextCard];
-            currentButtonStyleEffect(dropButton);
-            nextButtonStyleEffect(bringButton);
-            setTimeout(()=>{
-            nextButtonStyleEffect({zIndex: 7, marginBottom: '13px',
-            backgroundColor: frontCardColor});
-            currentButtonStyleEffect({zIndex: 3, marginBottom: '0px',
-            backgroundColor: backCardColor});
-            setHeaderEnable(true);
-            }, 1899)
-        },
-        [bringButton, buttonEffects, currentCard, dropButton, nextCard],
-    )
-
-    useEffect(() => {
-        if(nextCard!==-1){
-            updateStyles();
-        }
-    },[nextCard, updateStyles])*/
-
-    //SOLUCION 3
-    //const headerStylesUpdated = useRef(false);
-
     useEffect(() => {
         if(nextCard!==-1){
             if(headerStylesUpdated.current === false){

@@ -12,6 +12,8 @@ function App() {
   const headerStylesUpdated = useRef(true);
   const bodyStylesUpdated = useRef(true);
 
+  window.screen.orientation.lock('landscape');
+
   return (
     <Fragment>
       <animated.div className='appDiv'>

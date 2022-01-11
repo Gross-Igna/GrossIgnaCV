@@ -34,13 +34,12 @@
     justify-content: center;
     align-items: center;
 
-    height: 6vh;
+    height: 3vw;
     padding: 0.3vw 4vw 0.1vw 4vw;
     margin-right: 6px;
 }
 
 .mainButton{
-    /*padding-top: 0.1vw;*/
     min-width: max-content;
 }
 
@@ -73,4 +72,19 @@
     margin-right: 5px;
     color: #d9d6eb;
     font-size: 1rem;
+}
+@media (max-width: 750px) 
+{
+    .icon{
+        position: relative;
+        top: 5px;
+        font-size: 0.5rem;
+    }
+    .profileImage{
+        height: 10px;
+        margin-bottom: 5px;
+    }
+    .headerButton{
+        height: 5vw;
+    }
 }

@@ -43,7 +43,7 @@
         display: none;
     }
     .carousel-inner{
-        margin-bottom: 3vw;
+        margin-bottom: -0.5vw;
     }
     .carousel-control-next-icon, 
     .carousel-control-prev-icon{

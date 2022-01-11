@@ -22,7 +22,7 @@ export default function ContactCard({contactCardStyle}){
                     <b className='contactTitle'>¡Contactate conmigo!&nbsp;</b>
                     <div className='contactSubtitle' style={{textDecorationColor: 'transparent'}}>
                     Ante cualquier cuestión y sin compromisos. Su mensaje no es molestia.<br></br>
-                    <i>(Click en los botones ↓)</i>
+                    <i>↓ (Click en los botones) ↓</i>
                     </div>
                 </div>
                 <div className='contactButtonsContainer'>

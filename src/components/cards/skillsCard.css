@@ -9,8 +9,13 @@
 
 .skillsTitle{
     font-size: 1.8vw;
-    /*border-bottom-style: double;
-    border-bottom-width: 0.15vw;*/
+}
+@media (max-width: 750px) 
+{
+    .skillsTitle
+    {
+        display: none;
+    }
 }
 
 .skillsDiv{

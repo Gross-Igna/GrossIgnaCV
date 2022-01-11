@@ -18,19 +18,18 @@
 }
 
 .alertTitle{
-    font-size: 300%;
+    font-size: 150%;
 }
 
 .alertImage{
     width: 15vw;
     margin-top: 1vw;
-    margin-bottom: 4vw;
 }
 
 .alertText{
     font-size: 80%;
 
-    margin: 0 20%;
+    margin: -0% 20%;
 }
 
 .alertBtn{
@@ -46,3 +45,9 @@
     border-style: solid;
     border-radius: 10px;
 }
+
+@media only screen and (orientation:landscape) {
+    .mobileAlert {
+      display: none;
+    }
+  }
