@@ -33,6 +33,12 @@
 .mainTitle{
     font-size: 3vw;
 }
+@media (max-width: 750px) 
+{
+    .mainTitle{
+        margin-bottom: 0.7vw;
+    }
+}
 
 .mainSubtitle{
     font-size: 1.5vw;
