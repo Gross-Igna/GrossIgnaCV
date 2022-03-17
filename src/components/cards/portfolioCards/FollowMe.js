@@ -75,7 +75,7 @@ export default function FollowMe() {
                                     <GiReturnArrow className='flipIcon'/>
                                 </button>
                                 <div className='disablerDiv'>
-                                    <iframe src="https://www.youtube.com/watch?v=8H8CgKdlWag" 
+                                    <iframe src="https://www.youtube.com/embed/8H8CgKdlWag" 
                                     title="YouTube video player" frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; 
                                     gyroscope; picture-in-picture" style={!flipped ? {display: 'none'} : undefined}
