@@ -21,13 +21,47 @@
 }
 
 .contactButton2{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 
     font-size: 0.8vw;
-
     padding-bottom: 0.8vw;
+
 }.contactButton2:hover{
     background-color: #d2c9db09;
+}
+
+/* CONTACTO FORM */
+.conTitle{
+    text-align: center;
+    color: black;
+    margin-bottom: 0%;
+}
+
+.conMsgCol{
+    padding-top: 2.5%;
+}
+
+.contacto{
+    width: 45vw;
+}
+
+.conButton{
+    width: 57%;
+    height: 3vw;
+    margin: 0 22%;
+
+    font-size: 1vw;
+}
+
+.form1{
+    width: 21vw;
+    height: 3vw;
+
+    font-size: 1vw;
+}
+
+.formMsg{
+    width: 43.5vw;
+    height: 11vw;
+
+    font-size: 1vw;
 }
