@@ -11,7 +11,6 @@ import {animated} from 'react-spring';
 export default function ContactCard({contactCardStyle}){
 
     function clipBoardGmail(){
-        /*navigator.clipboard.writeText('https://www.linkedin.com/in/ignacio-gross-b287b7204/');*/
         navigator.clipboard.writeText('grossignacio01@gmail.com');
         alert("Link de correo electrónico copiado a su portapapeles :)");
         window.open('https://mail.google.com/mail/u/0/#inbox?compose=new', '_blank')

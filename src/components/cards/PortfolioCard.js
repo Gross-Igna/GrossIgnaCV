@@ -2,6 +2,7 @@ import React from 'react';
 import '../body.css';
 import './portfolioCard.css';
 import {Carousel} from 'react-bootstrap';
+import Compostela from './portfolioCards/Compostela';
 import NewLandingCv from './portfolioCards/NewLandingCv';
 import FollowMe from './portfolioCards/FollowMe';
 import ReactLogin from './portfolioCards/ReactLogin';
@@ -22,6 +23,9 @@ export default function PortfolioCard({portfolioCardStyle}) {
                     </Carousel.Item>
                     <Carousel.Item>
                         <NewLandingCv/>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <Compostela/>
                     </Carousel.Item>
                     <Carousel.Item>
                         <ReactLogin/>
